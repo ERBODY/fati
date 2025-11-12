@@ -12,6 +12,22 @@
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <script type="module" src="./src/main.tsx"></script>
+    <script>
+      // Global error handler
+      window.addEventListener('error', function(event) {
+        console.error('Global error:', event.error);
+        const root = document.getElementById('root');
+        if (root) {
+          root.innerHTML = `
+            <div style="padding: 2rem; color: white; text-align: center; font-family: Arial, sans-serif;">
+              <h1>Something went wrong</h1>
+              <p>Please try refreshing the page or contact support if the issue persists.</p>
+              <p>Error: ${event.error?.message || 'Unknown error'}</p>
+            </div>
+          `;
+        }
+      });
+    </script>
   </body>
 </html>
