@@ -2,7 +2,6 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <base href="/" />
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Happy Birthday Fati! 🎂 - A Special Message Just for You</title>
@@ -10,63 +9,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-      body, html {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        height: 100%;
-        overflow-x: hidden;
-      }
-      #root {
-        width: 100%;
-        min-height: 100vh;
-      }
-    </style>
   </head>
   <body>
-    <div id="root">
-      <div style="display: flex; justify-content: center; align-items: center; height: 100vh; background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);">
-        <div style="color: white; text-align: center; padding: 2rem;">
-          <div style="font-size: 2rem; margin-bottom: 1rem;">Loading...</div>
-          <div style="width: 100%; height: 4px; background: rgba(255, 255, 255, 0.2); border-radius: 2px;">
-            <div style="width: 100%; height: 100%; background: white; border-radius: 2px; animation: loading 1.5s ease-in-out infinite;"></div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
-    <script>
-      window.addEventListener('error', function(event) {
-        console.error('Global error:', event.error);
-        const root = document.getElementById('root');
-        if (root) {
-          root.innerHTML = `
-            <div style="padding: 2rem; color: white; text-align: center; font-family: Arial, sans-serif; background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%); min-height: 100vh; display: flex; flex-direction: column; justify-content: center;">
-              <h1 style="font-size: 2rem; margin-bottom: 1rem;">Something went wrong</h1>
-              <p style="margin-bottom: 0.5rem;">Please try refreshing the page or contact support if the issue persists.</p>
-              <p style="background: rgba(0,0,0,0.2); padding: 0.5rem; border-radius: 4px; font-family: monospace; max-width: 600px; margin: 1rem auto 0; word-break: break-word;">
-                ${event.error?.message || 'Unknown error'}
-              </p>
-              <button onclick="window.location.reload()" style="margin-top: 1.5rem; padding: 0.5rem 1.5rem; background: white; color: #4f46e5; border: none; border-radius: 4px; cursor: pointer; font-weight: 600;">
-                Refresh Page
-              </button>
-            </div>`;
-        }
-      });
-
-      // Add loading animation
-      document.addEventListener('DOMContentLoaded', function() {
-        const style = document.createElement('style');
-        style.textContent = `
-          @keyframes loading {
-            0% { width: 0%; margin-left: 0; }
-            50% { width: 100%; margin-left: 0; }
-            100% { width: 0%; margin-left: 100%; }
-          }
-        `;
-        document.head.appendChild(style);
-      });
-    </script>
   </body>
 </html>
