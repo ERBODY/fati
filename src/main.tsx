@@ -6,7 +6,6 @@ import { StrictMode } from "react";
 import "./index.css";
 import App from "./App";
 
-// Error Boundary Component
 class ErrorBoundary extends React.Component<{children: React.ReactNode}, {hasError: boolean}> {
   constructor(props: {children: React.ReactNode}) {
     super(props);
@@ -36,7 +35,6 @@ class ErrorBoundary extends React.Component<{children: React.ReactNode}, {hasErr
   }
 }
 
-// Initialize Convex client only if URL is available
 const convexUrl = import.meta.env.VITE_CONVEX_URL as string | undefined;
 let AppWithProviders = <App />;
 
@@ -50,12 +48,10 @@ if (convexUrl) {
     );
   } catch (error) {
     console.error('Failed to initialize Convex:', error);
-    // Fall back to non-Convex app
     AppWithProviders = <App />;
   }
 }
 
-// Render the app with error boundary
 const rootElement = document.getElementById('root');
 if (!rootElement) throw new Error('Failed to find the root element');
 

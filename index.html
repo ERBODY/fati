@@ -14,7 +14,6 @@
     <div id="root"></div>
     <script type="module" src="./src/main.tsx"></script>
     <script>
-      // Global error handler
       window.addEventListener('error', function(event) {
         console.error('Global error:', event.error);
         const root = document.getElementById('root');
@@ -24,8 +23,7 @@
               <h1>Something went wrong</h1>
               <p>Please try refreshing the page or contact support if the issue persists.</p>
               <p>Error: ${event.error?.message || 'Unknown error'}</p>
-            </div>
-          `;
+            </div>`;
         }
       });
     </script>
