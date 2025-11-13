@@ -51,7 +51,6 @@ export default function App() {
     return () => clearInterval(interval);
   }, [personalMessages.length]);
 
-  // Timer calculation for time since birth
   useEffect(() => {
     const calculateTimeElapsed = () => {
       const birthDate = new Date('2010-07-07T00:00:00');
@@ -74,7 +73,6 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 relative overflow-hidden">
-      {/* Starry background */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-10 left-10 text-2xl animate-pulse">⭐</div>
         <div className="absolute top-20 right-20 text-xl animate-pulse delay-300">✨</div>
@@ -88,7 +86,6 @@ export default function App() {
         <div className="absolute top-1/6 right-1/4 text-xl animate-pulse delay-600">✨</div>
       </div>
 
-      {/* Floating decorations */}
       <div className="fixed inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-10 left-1/2 text-4xl animate-bounce">🎈</div>
         <div className="absolute bottom-20 left-10 text-3xl animate-bounce delay-300">🎂</div>
@@ -100,10 +97,8 @@ export default function App() {
       </div>
 
       <div className="relative z-10 container mx-auto px-4 py-8">
-        {/* Main Birthday Card */}
         <div className={`max-w-5xl mx-auto transition-all duration-1000 ${showCard ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           <div className="bg-white rounded-3xl shadow-2xl overflow-hidden border-4 border-purple-200">
-            {/* Header */}
             <div className="bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 p-8 text-center relative overflow-hidden">
               <div className="absolute inset-0 bg-white opacity-10 animate-pulse"></div>
               <h1 className="text-6xl font-bold text-white mb-4 animate-pulse relative z-10">
@@ -117,7 +112,6 @@ export default function App() {
               </p>
             </div>
 
-            {/* Main Content */}
             <div className="p-8">
               <div className="text-center mb-8">
                 <div className="text-8xl mb-6 animate-bounce">🎉</div>
@@ -138,7 +132,6 @@ export default function App() {
                 </div>
               </div>
 
-              {/* Time Counter Section */}
               <div className="bg-gradient-to-r from-yellow-50 via-orange-50 to-pink-50 rounded-2xl p-8 mb-8 border-2 border-yellow-200 shadow-lg text-center">
                 <h3 className="text-2xl font-bold text-gray-800 mb-6">
                   ✨ The world just got luckier since:
@@ -166,7 +159,6 @@ export default function App() {
                 </p>
               </div>
 
-              {/* Moon Phase Section */}
               <div className="bg-gradient-to-r from-indigo-50 via-purple-50 to-pink-50 rounded-2xl p-8 mb-8 border-2 border-indigo-200 shadow-lg text-center">
                 <h3 className="text-2xl font-bold text-gray-800 mb-6">
                   🌙 The Moon on Your Birth Day - July 7, 2010
@@ -179,7 +171,6 @@ export default function App() {
                     onClick={() => setMoonLarge(true)}
                   />
 
-                  {/* Modal for enlarged moon */}
                   {moonLarge && (
                     <div className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50" onClick={() => setMoonLarge(false)}>
                       <div className="relative" onClick={e => e.stopPropagation()}>
@@ -202,7 +193,6 @@ export default function App() {
                 </div>
               </div>
 
-              {/* Arabic Poem Section */}
               <div className="bg-gradient-to-r from-purple-50 via-white to-indigo-50 rounded-2xl p-8 mb-8 border-2 border-purple-200 shadow-lg">
                 <h3 className="text-2xl font-bold text-center text-gray-800 mb-6">
                   🌙 A Special Poem Just for You 🌙
@@ -229,7 +219,6 @@ export default function App() {
                 </div>
               </div>
 
-              {/* Personal Birthday Wishes */}
               <div className="grid md:grid-cols-2 gap-6 mb-8">
                 <div className="bg-gradient-to-br from-purple-100 to-purple-50 rounded-xl p-6 text-center border-2 border-purple-200 hover:shadow-lg transition-all duration-300">
                   <div className="text-4xl mb-3">🌙</div>
@@ -253,7 +242,6 @@ export default function App() {
                 </div>
               </div>
 
-              {/* Personal Message Section */}
               <div className="bg-gradient-to-r from-purple-50 via-white to-pink-50 rounded-2xl p-8 border-2 border-purple-200 shadow-lg">
                 <h3 className="text-2xl font-bold text-center text-gray-800 mb-6">
                   💌 A Personal Message Just for You
@@ -272,7 +260,6 @@ export default function App() {
                 </div>
               </div>
 
-              {/* Birthday Cake Animation */}
               <div className="text-center mt-8">
                 <div className="inline-block animate-bounce">
                   <div className="text-8xl mb-2">🎂</div>
@@ -283,7 +270,6 @@ export default function App() {
           </div>
         </div>
 
-        {/* Footer */}
         <div className="text-center mt-12 pb-8">
           <div className="bg-white rounded-2xl p-6 max-w-md mx-auto shadow-lg border-2 border-purple-200">
             <p className="text-lg text-gray-700 mb-2">
